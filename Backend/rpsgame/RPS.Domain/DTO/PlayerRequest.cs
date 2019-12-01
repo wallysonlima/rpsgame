@@ -1,7 +1,7 @@
 namespace RPS.Domain.DTO
 {
+    using System.Collections.Generic;
     public class PlayerRequest{
-        public string name {get; set;}
-        public string move {get; set;}
+        public List<PlayerDTO> list {get; set;}
     }
 }
