@@ -9,6 +9,6 @@ namespace RPS.Abstractions
     using RPS.Domain.DTO;
     public interface ITournamentService
     {
-        Task<PlayerDTO> rps_tournament_winner(TournamentServiceRequest req);
+        Task<PlayerDTO> rps_tournament_winner(PlayerRequest req);
     }
 }
