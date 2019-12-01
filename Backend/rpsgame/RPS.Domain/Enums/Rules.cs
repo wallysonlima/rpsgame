@@ -1,5 +1,8 @@
 namespace RPS.Domain.Enums
 {
+    using System.ComponentModel;
+    using System;
+    
     public enum Rules
     {
         Rock = 0,
@@ -10,12 +13,12 @@ namespace RPS.Domain.Enums
     public enum Errors
     {
         [Description("WrongNumberOfPlayersError")]
-        error = 3,
+        wrongNumberOfPlyersError = 3,
         [Description("NoSuchStrategyError")]
-        error = 4,
+        noSuchStrategyError = 4,
         [Description("WrongMatchPerRound")]
-        error = 5,
+        WrongMatchPerRound = 5,
         [Description("BadFormedTournament")]
-        error = 6
+        BadFormedTournament = 6
     }
 }
