@@ -1,8 +1,44 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPSGame</title>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href=""@Url.Content("~/css/main.css")">
+        <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/todos.css")">
+    </head>
+
+    <body>
+        <nav id="menu">
+            <ul>
+                <li class="brand"><\>LimaTech</li>
+                <li><a asp-action="index">Home</a></li>
+                <li><a asp-action="about">About</a></li>
+            </ul>
+        </nav>
+
+        <div class="container2">
+            <img class="logo" src="images/logo.png">
+            <h1 class="title">ROCK PAPER SCISSOR GAME</h1>
+            <h7 class="subtitle">New Experience in a Traditional Game</h7>
+
+            <div id="container" class="todo">
+                <h1><i class="fa fa-plus"></i>MENU RPSGame</h1>
+                <ul>
+                    <li><span><i class="fa fa-linux"></i></span><a asp-action="player">Player VS Player (PVP)</a></li>
+                    <li><span><i class="fa fa-linux"></i></span><a href="#">Tournament</a></li>
+                    <li><span><i class="fa fa-linux"></i></span><a asp-action="rules">Rules</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <footer>   
+            <p class="foot">Software Developed by Wallyson Lima on December 2019</p>
+        </footer>
+    </body>
+</html>
+

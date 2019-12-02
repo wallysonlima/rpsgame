@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "About";
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPSGame</title>
+        <link rel="stylesheet" href=""@Url.Content("~/css/main.css")">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <nav id="menu">
+                <ul>
+                     <li class="brand"><\>LimaTech</li>
+                    <li><a asp-action="index">Home</a></li>
+                    <li><a asp-action="#">About</a></li>
+                </ul>
+        </nav>
+
+        <div class="container2">
+            <div class="information">
+                <h1 class="name">Wallyson Lima</h1>
+                <img class="picture" src="images/wally.jpeg">
+                <h3>
+                    <pre>
+                    Computer Science student at university Unesp (Brazil) and backend software developer.
+                    In my free time I like reading books, watching movies, running and
+                    share a cup of coffee and talk with friends.
+                    </pre>
+                </h3>
+            </div>
+        </div>
+    
+        <footer>   
+            <p class="foot">Software Developed by Wallyson Lima on December 2019</p>
+        </footer>
+    </body>
+</html>

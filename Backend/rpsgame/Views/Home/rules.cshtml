@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Rules";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPSGame</title>
+        <link rel="stylesheet" href=""@Url.Content("~/css/main.css")">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <nav id="menu">
+                <ul>
+                    <li class="brand"><\>LimaTech</li>
+                    <li><a asp-action="index">Home</a></li>
+                    <li><a asp-action="about">About</a></li>
+                </ul>
+        </nav>
+
+        <div class="container2">
+                <h1 class="rules">Rules</h1>
+                <h3>
+                    <pre>
+                                - Only 2 Player for match
+
+                                - If move is different from "R", "P" or "S" is a strategy error.
+
+                                - If both player make the same move, player one win.
+
+                                - Only one winner for tournament.
+
+                                - Tournament have to 2^n players.
+                                
+                                - Is allowed a player participate only once per round. 
+                    </pre>
+                </h3>
+        </div>
+    
+        <footer>   
+            <p class="foot">Software Developed by Wallyson Lima on December 2019</p>
+        </footer>
+    </body>
+</html>

@@ -52,6 +52,27 @@ namespace rpsgame
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "player",
+                    pattern: "{controller=Home}/{action=Player}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "rules",
+                    pattern: "{controller=Home}/{action=Rules}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "about",
+                    pattern: "{controller=Home}/{action=About}");
+            });
         }
     }
 }
