@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: verdana, sans-serif;
+    font-family: roboto, verdana, sans-serif;
     width: 100%;
     height: 800px;
     color: white;
@@ -50,7 +50,7 @@ nav {
     margin-left: 20px;
 }
 
-.container {
+.container2 {
     width: 100%;
     height: 820px;
     background-image: url("../images/background.jpg");
