@@ -2,6 +2,7 @@ using System;
 
 namespace RPS.Domain.DTO
 {
+    [Serializable]
     public class PlayerDTO
     {
         public string name{get; set;}
