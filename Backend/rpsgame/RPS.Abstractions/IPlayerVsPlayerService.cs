@@ -9,6 +9,6 @@ namespace RPS.Abstractions
     using RPS.Domain.DTO;
     public interface IPlayerVsPlayerService
     {
-        PlayerDTO rps_game_winner(PlayerRequest req);
+        public PlayerDTO rps_game_winner(List<PlayerDTO> playerList);
     }
 }

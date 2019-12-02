@@ -11,20 +11,24 @@ namespace RPS.BusinessLogic
     { 
         public const int NUMPLAYERS = 2;
 
-        public PlayerDTO rps_game_winner(PlayerRequest req)
+        public PlayerVsPlayerService() {}
+        public PlayerDTO rps_game_winner(List<PlayerDTO> playerList)
         {
             PlayerDTO playerOne, playerTwo;
             String wrongNumber = Enum.GetName(typeof(Errors), Errors.wrongNumberOfPlayersError);
             String noStrategy = Enum.GetName(typeof(Errors), Errors.noSuchStrategyError);
             int move1, move2;
 
-            if ( req.list.Count != NUMPLAYERS)
+            if ( playerList.Count != NUMPLAYERS)
                 return (new PlayerDTO( wrongNumber, ""));
             
             else 
             {
-                playerOne = req.list.ElementAtOrDefault(0);
-                playerTwo = req.list.ElementAtOrDefault(1);
+                //playerOne = req.list.ElementAtOrDefault(0);
+                //playerTwo = req.list.ElementAtOrDefault(1);
+                playerOne = playerList[0];
+                playerTwo = playerList[1];
+
                 move1 = getStrategy(playerOne.move);
                 move2 = getStrategy(playerTwo.move);
 
