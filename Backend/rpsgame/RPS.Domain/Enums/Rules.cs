@@ -5,8 +5,11 @@ namespace RPS.Domain.Enums
     
     public enum Rules
     {
+        [Description("R")]
         rock = 0,
+        [Description("P")]
         paper = 1,
+        [Descriptiion("S")]
         scissors = 2
     }
 
