@@ -22,14 +22,21 @@
             <h1 class="title">ROCK PAPER SCISSOR GAME</h1>
             <h7 class="subtitle">New Experience in a Traditional Game</h7>
 
-            <div id="container" class="todo">
-                <h1><i class="fa fa-plus"></i>MENU RPSGame</h1>
-                <ul>
-                    <li><span><i class="fa fa-linux"></i></span><a href="player.html">Player VS Player (PVP)</a></li>
-                    <li><span><i class="fa fa-linux"></i></span><a href="#">Tournament</a></li>
-                    <li><span><i class="fa fa-linux"></i></span><a href="rules.html">Rules</a></li>
-                </ul>
-            </div>
+            <form action="js/play.js">
+                <table>
+                    <tr>
+                        <td>PlayerOne</td>
+                        <td><input required type="text" name="nameP1" placeholder="Name"> <input required type="text" name="moveP1" placeholder="Move"></td>
+                    </tr>
+                    <tr>
+                        <td>PlayerTwo</td>
+                        <td><input required type="text" name="nameP2" placeholder="Name"> <input required type="text" name="moveP2" placeholder="Move"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
+                    </tr>
+                </table>
+            </form>
         </div>
     
         <footer>   

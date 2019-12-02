@@ -119,3 +119,19 @@ h3 {
     margin-top: 200px;
     text-shadow: -1px 0 #000d1a, 0 1px #000d1a, 1px 0 #000d1a, 0 -1px #000d1a
 }
+
+input:required:invalid, input:focus:invalid {
+    border-color: red;
+}
+
+input:required:valid {
+    border-color: green;
+}
+
+table {
+    width: 800px;
+    height: 200px;
+    padding: 10px;
+    margin-left: 300px;
+    margin-top: 70px; 
+}
