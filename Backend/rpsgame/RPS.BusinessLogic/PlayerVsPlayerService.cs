@@ -16,6 +16,7 @@ namespace RPS.BusinessLogic
             PlayerDTO playerOne, playerTwo;
             String wrongNumber = Enum.GetName(typeof(Errors), Errors.wrongNumberOfPlayersError);
             String noStrategy = Enum.GetName(typeof(Errors), Errors.noSuchStrategyError);
+            int move1, move2;
 
             if ( req.list.Count != NUMPLAYERS)
                 return (new PlayerDTO( wrongNumber, ""));
@@ -24,15 +25,15 @@ namespace RPS.BusinessLogic
             {
                 playerOne = req.list.ElementAtOrDefault(0);
                 playerTwo = req.list.ElementAtOrDefault(1);
-                int move1 = getStrategy(playerOne.move);
-                int move2 = getStrategy(playerTwo.move);
+                move1 = getStrategy(playerOne.move);
+                move2 = getStrategy(playerTwo.move);
 
                 if ( ((move1 != (int) Rules.R) && (move1 != (int) Rules.P) && (move1 != (int) Rules.S)) 
                     || ((move2 != (int) Rules.R) && (move2 != (int) Rules.P) && (move2 != (int) Rules.S)) )
                     return (new PlayerDTO( noStrategy , ""));
             
                 else
-                    return getWinner(move1, move2);
+                    return getWinner();
             }
 
             // Local Functions, help method
@@ -51,7 +52,7 @@ namespace RPS.BusinessLogic
                 }
             }
 
-            PlayerDTO getWinner(int move1, int move2)
+            PlayerDTO getWinner()
             {
                 if ( move1 == move2 )
                     return playerOne;
