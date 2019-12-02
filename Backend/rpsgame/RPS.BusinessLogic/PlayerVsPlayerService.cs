@@ -1,73 +1,72 @@
 namespace RPS.BusinessLogic
 {
     using System;
-    using Domain.Enums;
-    using Abstractions.IPlayerVsPlayerService;
+    using Domain.DTO;
+    using Abstractions;
     using System.Linq;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Domain.Enums;
     public class PlayerVsPlayerService : IPlayerVsPlayerService
     { 
         public const int NUMPLAYERS = 2;
-        public const string ROCK = "0";
-        public const string PAPER = "1";
-        public const string SCISSORS = "2";
 
-        public Task<PlayerDTO> rps_game_winner(PlayerRequest req)
+        public PlayerDTO rps_game_winner(PlayerRequest req)
         {
-            Rules rules;
-            Errors errors;
             PlayerDTO playerOne, playerTwo;
-    
+            String wrongNumber = Enum.GetName(typeof(Errors), Errors.wrongNumberOfPlayersError);
+            String noStrategy = Enum.GetName(typeof(Errors), Errors.noSuchStrategyError);
+
             if ( req.list.Count != NUMPLAYERS)
-                return (new PlayerDTO( errors.wrongNumberOfPlyersError.ToDescriptionString() , errors.wrongNumberOfPlyersError));
+                return (new PlayerDTO( wrongNumber, ""));
             
             else 
             {
                 playerOne = req.list.ElementAtOrDefault(0);
                 playerTwo = req.list.ElementAtOrDefault(1);
-                string move1 = getStrategy(playerOne.move);
-                string move2 = getStrategy(playerTwo.move);
+                int move1 = getStrategy(playerOne.move);
+                int move2 = getStrategy(playerTwo.move);
 
-                if ( (!move1.Contains(rules.rock) && !move1.Contains(rules.paper) && !move1.Contains(rules.scissors)) 
-                    || (!move2.Contains(rules.rock) && !move2.Contains(rules.paper) && !move2.Contains(rules.scissors)) )
-                    return (new PlayerDTO( errors.noSuchStrategyError.ToDescriptionString() , errors.noSuchStrategyError));
+                if ( ((move1 != (int) Rules.R) && (move1 != (int) Rules.P) && (move1 != (int) Rules.S)) 
+                    || ((move2 != (int) Rules.R) && (move2 != (int) Rules.P) && (move2 != (int) Rules.S)) )
+                    return (new PlayerDTO( noStrategy , ""));
             
                 else
-                    return getWinner();
+                    return getWinner(move1, move2);
             }
 
-            // Local Function, help method
-            string getStrategy(String move)
+            // Local Functions, help method
+            int getStrategy(String move)
             {
                 switch(move.ToUpper())
                 {
-                    case rules.rock.ToDescriptionString():
-                        return ROCK;
-                    case rules.paper.ToDescriptionString():
-                        return PAPER;
-                    case rules.scissors.ToDescription():
-                        return SCISSORS;
-                    case default:
-                        return string.Empty();
+                    case "R":
+                        return (int) Rules.R;
+                    case "P":
+                        return (int) Rules.P;
+                    case "S":
+                        return (int) Rules.S;
+                    default:
+                        return -1;
                 }
             }
 
-            PlayerDTO getWinner()
+            PlayerDTO getWinner(int move1, int move2)
             {
-                if ( move1.Contains(move2) )
+                if ( move1 == move2 )
                     return playerOne;
 
-                if ( move1.Contains(rules.rock) )
-                    if ( move2.Contains(rules.scissors) )
+                if ( move1 == (int) Rules.R )
+                    if ( move2 == (int) Rules.S )
                         return playerOne;
                     else
                         return playerTwo;
-                else if( move1.Contains(rules.paper) )
-                    if( move2.Contains(rules.rock) )
+                else if( move1 == (int) Rules.P )
+                    if( move2 == (int) Rules.R )
                         return playerOne;
                     else
                         return playerTwo;
-                else if ( move2.Contains(rules.paper) )
+                else if ( move2 == (int) Rules.P )
                     return playerOne;
                 else
                     return playerTwo;

@@ -5,23 +5,16 @@ namespace RPS.Domain.Enums
     
     public enum Rules
     {
-        [Description("R")]
-        rock = 0,
-        [Description("P")]
-        paper = 1,
-        [Descriptiion("S")]
-        scissors = 2
+        R = 0,
+        P = 1,
+        S = 2
     }
 
     public enum Errors
     {
-        [Description("WrongNumberOfPlayersError")]
-        wrongNumberOfPlyersError = 3,
-        [Description("NoSuchStrategyError")]
+        wrongNumberOfPlayersError = 3,
         noSuchStrategyError = 4,
-        [Description("WrongMatchPerRound")]
         WrongMatchPerRound = 5,
-        [Description("BadFormedTournament")]
         BadFormedTournament = 6
     }
 }
