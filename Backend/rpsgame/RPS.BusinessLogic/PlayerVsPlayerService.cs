@@ -12,6 +12,7 @@ namespace RPS.BusinessLogic
         public const int NUMPLAYERS = 2;
 
         public PlayerVsPlayerService() {}
+        
         public PlayerDTO rps_game_winner(List<PlayerDTO> playerList)
         {
             PlayerDTO playerOne, playerTwo;
