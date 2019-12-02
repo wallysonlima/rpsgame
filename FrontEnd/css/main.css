@@ -113,3 +113,9 @@ h3 {
     margin-top: 50px;
     margin-right: 10px;
 }
+
+.rules {
+    margin-left: 550px;
+    margin-top: 200px;
+    text-shadow: -1px 0 #000d1a, 0 1px #000d1a, 1px 0 #000d1a, 0 -1px #000d1a
+}
