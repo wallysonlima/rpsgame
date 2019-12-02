@@ -34,6 +34,7 @@ nav {
     width: 50px;
     margin-left: 20px;
     color: white;
+    text-shadow: -1px 0 #000d1a, 0 1px #000d1a, 1px 0 #000d1a, 0 -1px #000d1a
 }
 
 #menu ul li a:link {
@@ -45,7 +46,7 @@ nav {
 }
 
 .brand {
-    margin-right: 910px;
+    margin-right: 940px;
     margin-left: 20px;
 }
 
@@ -57,6 +58,7 @@ nav {
     margin-left: 0;
     margin-right: 0;
     float: center;
+    display:inline-block;
 }
 
 footer {
@@ -67,6 +69,7 @@ footer p {
     padding-top: 10px;
     padding-bottom: 5px;
     text-align: center;
+    text-shadow: -1px 0 #000d1a, 0 1px #000d1a, 1px 0 #000d1a, 0 -1px #000d1a
 }
 
 .information {
@@ -82,13 +85,31 @@ img {
     margin-left: 150px;
 }
 
-h1 {
-    margin-left: 150px;
-}
-
 h3 {
     margin-top: 100px;
     font-size: 18px;
     text-shadow: -1px 0 #000d1a, 0 1px #000d1a, 1px 0 #000d1a, 0 -1px #000d1a
 }
 
+.title {
+    margin-left: 400px;
+    margin-top: -80px;
+    text-shadow: -1px 0 #000d1a, 0 1px #000d1a, 1px 0 #000d1a, 0 -1px #000d1a
+}
+
+.subtitle {
+    margin-left: 480px;
+    text-shadow: -1px 0 #000d1a, 0 1px #000d1a, 1px 0 #000d1a, 0 -1px #000d1a
+}
+
+.logo {
+    margin-left: 250px;
+    margin-top: 200px;
+    margin-right: 10px;
+}
+
+.picture, .name {
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-right: 10px;
+}
