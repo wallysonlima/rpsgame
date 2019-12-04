@@ -1,5 +1,5 @@
 # rpsgame
-Is a game of rock-paper-scissors (RPS), each player chooses to play Rock (P), Paper (P) or Scissors (S).
+Is a game of rock-paper-scissors (RPS), each player chooses to play Rock (R), Paper (P) or Scissors (S).
 
 <h3>Game Rules</h3>
 
